@@ -1,0 +1,63 @@
+package com.example.a10453.charpter_1;
+
+/*
+目录结构中的各项内容介绍:
+.gradle,.idea和build:
+系统自动生成,不用管
+!!!!!     app:项目中的代码和资源几乎全部存放于此,主要学习的也是这里面的东西     !!!!!
+gradle:
+存放gradle wrapper配置文件,AS会根据本地工程缓存自动决定是否联网下载gradle.默认情况下不启动gradle wrapper
+build.gradle:
+项目全局的gradle构建脚本;gradle.properties:全局的gradle配置文件
+Charpter_1.iml:
+iml文件是intelliJ IDEA项目自动生成的文件(AS基于此开发),不用动
+gradlelew和gradlelew.bat:
+用来在命令行页面执行gradle命令,分别为在linux和windows中使用
+local.properties:
+用于指定本地中的SDK路径,本机中的SDK发生变化时可以修改此文件设置新路径
+settings.gradle:
+用于指定项目中所有的引入模块(本项目中只有app,因此也只引入了app)
+*/
+
+/*
+对于app中各部分的详细介绍:
+build:
+与项目中的build类似,不用管
+libs:
+若需要用到第三方的jar包,则将jar包存放于此,然后包会被自动添加到构建路径中去
+    src文件夹中:
+androidTest:
+用来编写androidTest测试用例,可对项目进行自动化测试
+main.java:
+存放Java代码的地方
+main.res:
+resources,包含所有资源文件,例如图片啦,视频啦,界面布局啥的
+AndroidManifest.xml:
+整个安卓项目的配置文件,程序中定义的四大组件都需在此注册,还可以在此给应用程序添加权限声明
+test:
+用来编写unit test测试用例
+proguard-rules.pro:
+用于混淆代码,增加源码的阅读难度,用于打包后不希望有人破解此应用程序
+*/
+
+/*
+对于res中各文件夹的详细介绍:
+drawable开头:存放图片
+mipmap开头:存放图标
+values开头:存放字符串,样式,颜色配置
+layout:存放可视化布局信息
+ */
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.util.Log;
+
+public class HelloWorldActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.hello_world_layout);
+        Log.d("HelloWorldActivity","onCreate execute");
+    }
+
+}
