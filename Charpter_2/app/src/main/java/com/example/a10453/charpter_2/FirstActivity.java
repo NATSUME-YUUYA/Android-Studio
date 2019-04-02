@@ -11,7 +11,23 @@ import android.widget.Button;
 import android.widget.Toast;
 
 public class FirstActivity extends AppCompatActivity {
-    @Override                   //onCreate,主要做这个activity启动的一些必要的初始化的工作
+    @Override
+
+    /*
+    关于活动的生命周期,Activity类中定义了7种回调方法覆盖了活动生命周期的每一个环节
+    1.onCreate:在活动第一次创建时被调用,主要做这个activity启动的一些必要的初始化的工作
+    2.onStart:在活动由不可见变为可见时调用
+    3.onResume:在活动准备好与用户交互时调用.此时的活动一定位于返回栈的栈顶,并且处于运行状态
+    4.onPause:此活动在系统准备恢复或者启动另一个活动时调用,一般通过这个方法释放些CPU资源,保存关键数据,但一定要快
+    5.onStop:在活动完全不可见时调用,与4的主要区别:若新活动是对话框式的活动,则4会执行
+    6.onDestroy:在活动被销毁前调用,之后活动状态变为销毁状态
+    7.onRestart:在活动由停止状态变为运行状态前调用,也就是活动被重启
+
+    1~6之间的生存期为完整生存周期
+    2~5之间为可见生存周期,活动对于用用户总是可见的
+    3~4为前台生存周期,活动总是可交互的,对用户来说最多见到的状态
+     */
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.first_layout);
